@@ -6,6 +6,7 @@
 //
 
 /*****************
+ 
  Using MVVM Arch. in app
  
  if i use UIKIT - will show list of schools in collection view, registered cell, cell on tap load school viewcontroller
