@@ -77,11 +77,10 @@ struct ContentView: View {
     @State private var isTap = false
     var body: some View {
         NavigationView{
-            
             if schoolList.errorSchools != nil{
                 Text("Ops Somthing went wrong!!!")
             }else{
-                List(self.schoolList.schoolsList, id: \.id){ school in
+                List(self.schoolList.schoolsList, id: \.dbn){ school in
                     VStack(alignment: .leading, spacing: 8) {
                         if isTap {
                             NavigationLink(destination: DetailView(), isActive: self.$isTap) {EmptyView()}

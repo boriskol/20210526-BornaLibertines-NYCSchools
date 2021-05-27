@@ -8,7 +8,6 @@
 import Foundation
 
 struct School: Decodable {
-    let id = UUID()
     let dbn: String?
     let schoolname: String?
     let overviewparagraph: String?
@@ -24,7 +23,7 @@ struct School: Decodable {
         case schoolname = "school_name"
         case overviewparagraph = "overview_paragraph"
         case primaryaddressline = "primary_address_line_1"
-        case id, dbn, academicopportunities1, academicopportunities2, location, website, city, zip
+        case dbn, academicopportunities1, academicopportunities2, location, website, city, zip
     }
 }
 
