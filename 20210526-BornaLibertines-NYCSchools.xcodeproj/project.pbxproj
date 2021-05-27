@@ -34,6 +34,7 @@
 		2C84F9F7265EB7EF00BE0765 /* SchoolListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListVM.swift; sourceTree = "<group>"; };
 		2C84F9FA265ED57B00BE0765 /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
 		2C84F9FC265EEE5100BE0765 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2C84F9FE265FD6BD00BE0765 /* 20210526-BornaLibertines-NYCSchools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "20210526-BornaLibertines-NYCSchools.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		2C84F9C9265EA88300BE0765 = {
 			isa = PBXGroup;
 			children = (
+				2C84F9FE265FD6BD00BE0765 /* 20210526-BornaLibertines-NYCSchools.entitlements */,
 				2C84F9CE265EA88A00BE0765 /* Shared */,
 				2C84F9D8265EA8A300BE0765 /* iOS */,
 				2C84F9DF265EA8A300BE0765 /* macOS */,
@@ -372,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "20210526-BornaLibertines-NYCSchools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3HVN468NS;
 				ENABLE_PREVIEWS = YES;
@@ -384,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.b2studio.-0210526-BornaLibertines-NYCSchools";
 				PRODUCT_NAME = "20210526-BornaLibertines-NYCSchools";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "20210526-BornaLibertines-NYCSchools.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3HVN468NS;
 				ENABLE_PREVIEWS = YES;
@@ -406,6 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.b2studio.-0210526-BornaLibertines-NYCSchools";
 				PRODUCT_NAME = "20210526-BornaLibertines-NYCSchools";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
