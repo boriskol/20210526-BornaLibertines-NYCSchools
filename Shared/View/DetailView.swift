@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DetailView: View {
-    //@State var school: School
     @EnvironmentObject var schoolDetail: SchoolViewModel
     
     var body: some View {

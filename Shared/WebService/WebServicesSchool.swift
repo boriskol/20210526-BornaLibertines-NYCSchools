@@ -76,7 +76,6 @@ class WebServiceSchool {
             }
             return
         }
-        //debugPrint(request.absoluteString)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {

@@ -10,6 +10,7 @@
  Using MVVM Arch. in app
  
  if i use UIKIT - will show list of schools in collection view, registered cell, cell on tap load school viewcontroller
+ // MARK: - UIKIT
  
  lazy var collectionView :UICollectionView = {
      let layout = UICollectionViewFlowLayout()
@@ -80,6 +81,9 @@ struct ContentView: View {
             if schoolList.errorSchools != nil{
                 Text("Ops Somthing went wrong!!!")
             }else{
+                //present VM schoolList with List
+                // it can be done with ForEach
+                // MARK: - List Schools
                 List(self.schoolList.schoolsList, id: \.dbn){ school in
                     VStack(alignment: .leading, spacing: 8) {
                         if isTap {
@@ -87,6 +91,7 @@ struct ContentView: View {
                         }
                         SchoolView(school: school)
                         .onTapGesture {
+                            // MARK: - Get School Detail, Navigate to DetailView
                             schoolList.getSchool(schooldbn: school)
                             DispatchQueue.main.async {
                                 self.isTap.toggle()
