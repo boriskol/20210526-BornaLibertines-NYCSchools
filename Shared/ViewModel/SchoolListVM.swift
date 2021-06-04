@@ -6,43 +6,53 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
-
-final class SchoolViewModel: ObservableObject {
+class SchoolViewModel: ObservableObject {
+  let schoolProvider: SchoolsProvider! = SchoolsApi()
+  @Published private(set) var schools: [School] = []
+  @Published private(set) var schoolDetail: [SchoolDetail] = []
+  @Published private(set) var schoolTap: School?
+  var publishers = [AnyCancellable]()
     
-    init(){
-        getSchools()
+    init() {
+        //getAllSchools()
+    }
+    
+    //MARK: Combine
+    
+    func getAllSchools(){
+        schoolProvider.getAllSchools()
+            .map { $0 }
+            .sink(
+                receiveCompletion: { error in
+                print(" \(error)")
+                },
+                receiveValue: { art in
+                    DispatchQueue.main.async { [self] in
+                    schools = art
+                }
+            })
+            .store(in: &publishers)
+    }
+    func getSchool(school: School){
+        schoolTap = school
+        schoolProvider.getSchool(school: school)
+            .map { $0 }
+            .sink(
+                receiveCompletion: { error in
+                debugPrint("no school \(error)")
+                },
+                receiveValue: { art in
+                    DispatchQueue.main.async { [self] in
+                       schoolDetail = art
+                }
+            })
+            .store(in: &publishers)
     }
 
-    @Published var schoolsList = [School]()
-    @Published var schoolResult = [SchoolDetail]()
-    @Published var school: School?
-    @Published var errorSchools: NetworkError?
-    
-    func getSchools(){
-        WebServiceSchool().parseListSchools(complition: { result in
-            switch result {
-            case .success(let succs):
-                self.schoolsList = succs
-            case .failure(let err):
-                debugPrint("ShoolViewModel \(err.localizedDescription)")
-                self.errorSchools = err
-            }
-        })
-    }
-    
-    func getSchool(schooldbn: School){
-        school = schooldbn
-        WebServiceSchool().getSchool(schooldbn: schooldbn, complition: { result in
-            switch result {
-            case .success(let succs):
-                self.schoolResult = succs
-            case .failure(let err):
-                debugPrint("ShoolViewModel \(err.localizedDescription)")
-                self.errorSchools = err
-            }
-        })
-    }
-    
 }
+
+
+

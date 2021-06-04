@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SchoolView: View {
     @State var school: School
+
     private var address: String {
         let ar = school.location!.components(separatedBy: "(")
         return ar[0]
@@ -25,10 +26,3 @@ struct SchoolView: View {
         }
     }
 }
-/*
-struct SchoolView_Previews: PreviewProvider {
-    static var previews: some View {
-        SchoolView()
-    }
-}
-*/

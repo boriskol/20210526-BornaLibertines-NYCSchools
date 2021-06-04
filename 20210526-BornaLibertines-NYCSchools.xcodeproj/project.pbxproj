@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C420D152668C96800F991F2 /* SchoolsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C420D142668C96800F991F2 /* SchoolsProvider.swift */; };
+		2C420D162668C96800F991F2 /* SchoolsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C420D142668C96800F991F2 /* SchoolsProvider.swift */; };
+		2C68716A266A85AE00B8F2E0 /* SchoolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C687169266A85AE00B8F2E0 /* SchoolService.swift */; };
 		2C84F9E2265EA8A300BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9CF265EA88A00BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift */; };
 		2C84F9E3265EA8A300BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9CF265EA88A00BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift */; };
 		2C84F9E4265EA8A300BE0765 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9D0265EA88A00BE0765 /* ContentView.swift */; };
 		2C84F9E5265EA8A300BE0765 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9D0265EA88A00BE0765 /* ContentView.swift */; };
 		2C84F9E6265EA8A300BE0765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C84F9D1265EA8A300BE0765 /* Assets.xcassets */; };
 		2C84F9E7265EA8A300BE0765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C84F9D1265EA8A300BE0765 /* Assets.xcassets */; };
-		2C84F9F2265EA9FC00BE0765 /* WebServicesSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9F1265EA9FC00BE0765 /* WebServicesSchool.swift */; };
 		2C84F9F5265EAD1A00BE0765 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9F4265EAD1A00BE0765 /* SchoolModel.swift */; };
 		2C84F9F8265EB7EF00BE0765 /* SchoolListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9F7265EB7EF00BE0765 /* SchoolListVM.swift */; };
 		2C84F9FB265ED57B00BE0765 /* SchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84F9FA265ED57B00BE0765 /* SchoolView.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C420D142668C96800F991F2 /* SchoolsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsProvider.swift; sourceTree = "<group>"; };
+		2C687169266A85AE00B8F2E0 /* SchoolService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolService.swift; sourceTree = "<group>"; };
 		2C84F9CF265EA88A00BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0210526_BornaLibertines_NYCSchoolsApp.swift; sourceTree = "<group>"; };
 		2C84F9D0265EA88A00BE0765 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C84F9D1265EA8A300BE0765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,7 +33,6 @@
 		2C84F9DE265EA8A300BE0765 /* 20210526-BornaLibertines-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20210526-BornaLibertines-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C84F9E0265EA8A300BE0765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C84F9E1265EA8A300BE0765 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		2C84F9F1265EA9FC00BE0765 /* WebServicesSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesSchool.swift; sourceTree = "<group>"; };
 		2C84F9F4265EAD1A00BE0765 /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		2C84F9F7265EB7EF00BE0765 /* SchoolListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListVM.swift; sourceTree = "<group>"; };
 		2C84F9FA265ED57B00BE0765 /* SchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolView.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				2C84F9CF265EA88A00BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift */,
 				2C84F9D0265EA88A00BE0765 /* ContentView.swift */,
 				2C84F9D1265EA8A300BE0765 /* Assets.xcassets */,
+				2C420D142668C96800F991F2 /* SchoolsProvider.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -109,7 +113,7 @@
 		2C84F9F0265EA96A00BE0765 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				2C84F9F1265EA9FC00BE0765 /* WebServicesSchool.swift */,
+				2C687169266A85AE00B8F2E0 /* SchoolService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -237,11 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C84F9FB265ED57B00BE0765 /* SchoolView.swift in Sources */,
+				2C420D152668C96800F991F2 /* SchoolsProvider.swift in Sources */,
+				2C68716A266A85AE00B8F2E0 /* SchoolService.swift in Sources */,
 				2C84F9E4265EA8A300BE0765 /* ContentView.swift in Sources */,
 				2C84F9F8265EB7EF00BE0765 /* SchoolListVM.swift in Sources */,
 				2C84F9FD265EEE5100BE0765 /* DetailView.swift in Sources */,
 				2C84F9F5265EAD1A00BE0765 /* SchoolModel.swift in Sources */,
-				2C84F9F2265EA9FC00BE0765 /* WebServicesSchool.swift in Sources */,
 				2C84F9E2265EA8A300BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C84F9E5265EA8A300BE0765 /* ContentView.swift in Sources */,
+				2C420D162668C96800F991F2 /* SchoolsProvider.swift in Sources */,
 				2C84F9E3265EA8A300BE0765 /* _0210526_BornaLibertines_NYCSchoolsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

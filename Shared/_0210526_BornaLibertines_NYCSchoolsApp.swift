@@ -9,11 +9,10 @@ import SwiftUI
 
 @main
 struct _0210526_BornaLibertines_NYCSchoolsApp: App {
-    @StateObject private var schools = SchoolViewModel()
     @Environment(\.scenePhase) var scenePhase
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(schools)
+            ContentView()
         }.onChange(of: scenePhase) { newScenePhase in
             switch newScenePhase {
             case .active:
