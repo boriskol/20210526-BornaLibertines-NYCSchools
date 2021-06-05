@@ -20,11 +20,6 @@ private struct Domain {
 
 public class SchoolsApi: SchoolsProvider {
    
-    private let baseURL = "https://data.cityofnewyork.us"
-    private enum Endpoint: String {
-        case allSchools = "/resource/s3k6-pzi2.json"
-        case search = "/resource/f9bf-2cp4.json"
-    }
     private enum Method: String {
         case GET
         case POST
@@ -38,14 +33,14 @@ public class SchoolsApi: SchoolsProvider {
     // MARK: Combine
     
     public func getAllSchools<T: Codable>() -> AnyPublisher<[T], APIError> {
-        return call(.allSchools, method: .GET, school: nil)
+        return call(method: .GET, school: nil)
     }
     func getSchool<T: Codable>(school: School) -> AnyPublisher<[T], APIError> {
-        return call(.search, method: .GET, school: school)
+        return call(method: .GET, school: school)
     }
     
-    private func call<T: Codable>(_ endPoint: Endpoint, method: Method, school: School?) -> AnyPublisher<[T], APIError> {
-        let urlRequest = request(for: endPoint, method: method, school: school)
+    private func call<T: Codable>(method: Method, school: School?) -> AnyPublisher<[T], APIError> {
+        let urlRequest = request(method: method, school: school)
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .mapError{ _ in APIError.serverError }
@@ -55,21 +50,29 @@ public class SchoolsApi: SchoolsProvider {
             .eraseToAnyPublisher()
     }
     
-    private func request(for endpoint: Endpoint, method: Method, school: School?) -> URLRequest {
+    private func request(method: Method, school: School?) -> URLRequest {
         
         if school != nil{
             guard let dbn = school?.dbn else {preconditionFailure("Bad URL")}
-            let path = "\(baseURL)\(endpoint.rawValue)?dbn=\(String(describing: dbn))"
-            guard let url = URL(string: path) else { preconditionFailure("Bad URL") }
-            //debugPrint(url.absoluteString)
+            var queryItems = [URLQueryItem]()
+            queryItems.append(URLQueryItem(name: "dbn", value: dbn))
+            var components = URLComponents()
+            components.scheme = Domain.scheme
+            components.host = Domain.host
+            components.path = Domain.pathdbn
+            components.queryItems = queryItems.isEmpty ? nil : queryItems
+            
+            guard let url = components.url else { preconditionFailure("Bad URL") }
             var request = URLRequest(url: url)
             request.httpMethod = "\(method)"
             request.allHTTPHeaderFields = ["Content-Type": "application/json"]
             return request
         }else{
-            let path = "\(baseURL)\(endpoint.rawValue)"
-            guard let url = URL(string: path)
-                else { preconditionFailure("Bad URL") }
+            var components = URLComponents()
+            components.scheme = Domain.scheme
+            components.host = Domain.host
+            components.path = Domain.path
+            guard let url = components.url else { preconditionFailure("Bad URL") }
             
             var request = URLRequest(url: url)
             request.httpMethod = "\(method)"
