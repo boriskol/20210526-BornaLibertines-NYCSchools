@@ -29,10 +29,8 @@ class SchoolViewModel: ObservableObject {
                 receiveCompletion: { error in
                 print(" \(error)")
                 },
-                receiveValue: { art in
-                    DispatchQueue.main.async { [self] in
+                receiveValue: { [self] art in
                     schools = art
-                }
             })
             .store(in: &publishers)
     }
@@ -44,10 +42,8 @@ class SchoolViewModel: ObservableObject {
                 receiveCompletion: { error in
                 debugPrint("no school \(error)")
                 },
-                receiveValue: { art in
-                    DispatchQueue.main.async { [self] in
+                receiveValue: { [self] art in
                        schoolDetail = art
-                }
             })
             .store(in: &publishers)
     }

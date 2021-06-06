@@ -44,7 +44,9 @@ public class SchoolsApi: SchoolsProvider {
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .mapError{ _ in APIError.serverError }
-            .map { $0.data }
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .tryMap { $0.data }
             .decode(type: [T].self, decoder: JSONDecoder())
             .mapError { _ in APIError.parsingError }
             .eraseToAnyPublisher()

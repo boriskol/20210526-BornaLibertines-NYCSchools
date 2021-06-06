@@ -15,5 +15,5 @@ public enum APIError: Error {
 
 protocol SchoolsProvider {
     func getAllSchools<T: Codable>() -> AnyPublisher<[T], APIError>
-    func getSchool<T: Codable>(school:School) -> AnyPublisher<[T], APIError>
+    func getSchool<T: Codable>(school: School) -> AnyPublisher<[T], APIError>
 }
