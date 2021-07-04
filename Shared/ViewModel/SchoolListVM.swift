@@ -26,21 +26,34 @@ class SchoolViewModel: ObservableObject {
         schoolProvider.getAllSchools()
             .map { $0 }
             .sink(
-                receiveCompletion: { error in
-                print(" \(error)")
+                receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        debugPrint("finished")
+                        break
+                    case .failure(let error):
+                        debugPrint("error getAllSchools \(error)")
+                    }
                 },
                 receiveValue: { [self] art in
                     schools = art
             })
             .store(in: &publishers)
     }
+    
     func getSchool(school: School){
         schoolTap = school
         schoolProvider.getSchool(school: school)
             .map { $0 }
             .sink(
-                receiveCompletion: { error in
-                debugPrint("no school \(error)")
+                receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        debugPrint("finished")
+                        break
+                    case .failure(let error):
+                        debugPrint("error getSchool \(error)")
+                    }
                 },
                 receiveValue: { [self] art in
                        schoolDetail = art

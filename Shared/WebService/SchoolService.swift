@@ -28,10 +28,7 @@ public class SchoolsApi: SchoolsProvider {
     }
     
     public init() {}
-    
-
     // MARK: Combine
-    
     public func getAllSchools<T: Codable>() -> AnyPublisher<[T], APIError> {
         return call(method: .GET, school: nil)
     }
