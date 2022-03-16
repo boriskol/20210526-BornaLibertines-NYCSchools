@@ -24,7 +24,7 @@ class SchoolViewModel: ObservableObject {
     
     func getAllSchools(){
         schoolProvider.getAllSchools()
-            .map { $0 }
+            //.map { $0 }
             .sink(
                 receiveCompletion: { [weak self] completion in
                     switch completion {
@@ -35,8 +35,8 @@ class SchoolViewModel: ObservableObject {
                         debugPrint("error getAllSchools \(error)")
                     }
                 },
-                receiveValue: { [self] art in
-                    schools = art
+                receiveValue: { [weak self] art in
+                   self?.schools = art
             })
             .store(in: &publishers)
     }
